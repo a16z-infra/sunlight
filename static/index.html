@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sunlight 🎯</title>
+  <style>
+    body {
+      font-family: 'Courier New', Courier, monospace;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #007bff;
+      color: #fff;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .container {
+      margin: 0 auto;
+      max-width: 600px;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .form-row:last-child {
+      justify-content: flex-start;
+    }
+
+    input[type="radio"] {
+      margin-right: 5px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+    }
+
+    input {
+      margin: 5px;
+    }
+
+    label {
+      margin-right: 10px;
+    }
+
+    input[type="url"] {
+      width: 50%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+      background-color: #222;
+      color: #fff;
+    }
+
+    button[type="submit"] {
+      background-color: #3D8B37;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #2B7925;
+    }
+
+    .status {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #333;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 20px;
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #444;
+      border-radius: 5px;
+      box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .headline {
+      font-weight: bold;
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    #bias-report {
+      text-align: center;
+      margin: 40px auto;
+      padding: 20px;
+      background-color: #212121;
+      max-width: 75vw;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  </style>
+</head>
+<body>
+  <h1>Sunlight 🎯</h1>
+
+  <div>
+    <form id="form">
+      <div class="form-row">
+        <label for="url">Enter any article URL:</label>
+      </div>
+      <div class="form-row">
+        <input type="url" id="url" name="url" required>
+        <button type="submit">Submit</button>
+      </div>
+      <div class="form-row">
+        <input type="radio" id="gpt-3.5-turbo" name="model" value="gpt-3.5-turbo" checked>
+        <label for="gpt-3.5-turbo">ChatGPT-3.5</label>
+        <input type="radio" id="text-davinci-003" name="model" value="text-davinci-003">
+        <label for="text-davinci-003">InstructGPT-3.5</label>
+        <input type="radio" id="gpt-4" name="model" value="gpt-4">
+        <label for="gpt-4">GPT-4</label>
+      </div>
+    </form>
+  </div>
+
+  <div id="status"></div>
+
+  <div id="result" style="display: none;">
+    <div id="factual-claims" style="display: block;">
+      <h2>Factual Claims</h2>
+      <div id="factual-claims-content" style="white-space: pre-wrap;"></div>
+    </div>
+    <div id="bias-report" style="display: block;">
+      <h2>Bias Report</h2>
+      <div id="bias-report-content" style="white-space: pre-wrap;"></div>
+    </div>
+    <div style="display: flex; flex-direction: row">
+      <div style="flex: 1; padding-right: 20px">
+        <h2>Processed Article</h2>
+        <div id="processed-headline" class="headline"></div>
+        <div id="processed-body"></div>
+      </div>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('form');
+    const statusEl = document.getElementById('status');
+    const resultEl = document.getElementById('result');
+    const processedHeadlineEl = document.getElementById('processed-headline');
+    const processedBodyEl = document.getElementById('processed-body');
+    const biasReportEl = document.getElementById('bias-report-content');
+    const factualClaimsEl = document.getElementById('factual-claims-content');
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const jobId = urlParams.get('job_id');
+    if (jobId) {
+      checkJobStatus(jobId);
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusEl.innerHTML = 'Processing...';
+
+      const url = form.elements.url.value;
+      const model = form.elements.model.value;
+      const response = await fetch('$APP_URL_PATH/submit_url', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 'url': url, 'model': model })
+      });
+
+      if (response.ok) {
+        const job = await response.json();
+        checkJobStatus(job.job_id);
+      } else {
+        const error = await response.text();
+        statusEl.innerHTML = `Error: ${error}`;
+      }
+    });
+
+    async function checkJobStatus(jobId) {
+      const response = await fetch(`$APP_URL_PATH/fetch_job_status?job_id=${jobId}`);
+      if (response.ok) {
+        const { status, result, error } = await response.json();
+        statusEl.innerHTML = status + '...';
+        if (status === 'Complete') {
+          statusEl.innerHTML = `Completed - cut ${result.cut_percent}% out`;
+          processedHeadlineEl.innerText = result.headline;
+          processedBodyEl.innerText = result.body;
+          biasReportEl.innerHTML = result.bias_report;
+          factualClaimsEl.innerHTML = result.factual_claims;
+          resultEl.style.display = 'block';
+        } else if (status === 'Failed' || status === 'Rejected') {
+          statusEl.innerText = `Failed: ${error}`;
+        } else {
+          setTimeout(() => checkJobStatus(jobId), 1000);
+        }
+      }
+    }
+  </script>
+</body>
+</html>

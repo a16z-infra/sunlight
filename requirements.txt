@@ -1,0 +1,7 @@
+langchain
+lxml
+openai
+six
+telnyx
+tiktoken
+tornado>=6.1.0
