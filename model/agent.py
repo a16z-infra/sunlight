@@ -133,7 +133,7 @@ class Agent(multiprocessing.Process):
                         stream_active = next_token
                     else:
                         result['factual_claims'] += next_token
-                        self._update_job_status(job_id, url, 'Analyzing claims', result=result)
+                        self._update_job_status(job_id, url, 'Analyzing claims', result=result, log_status=False)
                 result['factual_claims'] = result['factual_claims'].strip()
 
                 self._update_job_status(job_id, url, 'Critiquing bias', result=result)
@@ -150,13 +150,13 @@ class Agent(multiprocessing.Process):
                         stream_active = next_token
                     else:
                         result['bias_report'] += next_token
-                        self._update_job_status(job_id, url, 'Identifying slant', result=result)
+                        self._update_job_status(job_id, url, 'Identifying slant', result=result, log_status=False)
                 result['bias_report'] = result['bias_report'].strip()
 
                 self._update_job_status(job_id, url, 'Identifying slant', result=result)
                 result['original_slant'] = self.slant_chains['gpt-3.5-turbo'].run(bias_report=result['bias_report'])
 
-                self._update_job_status(job_id, url, 'Despinning coverage', result=result)
+                self._update_job_status(job_id, url, 'Adjusting rhetoric', result=result)
                 Thread(
                     target=self.despin_chains[model].run,
                     kwargs={
@@ -186,9 +186,9 @@ class Agent(multiprocessing.Process):
                         headline = headline.replace('United States', 'US')
 
                         result['headline'], result['body'] = headline, body
-                        self._update_job_status(job_id, url, 'Despinning coverage', result=result)
+                        self._update_job_status(job_id, url, 'Adjusting rhetoric', result=result, log_status=False)
 
-                result['cut_percent'] = int((1. - (len(body) / len(original_body))) * 100.)
+                result['cut_percent'] = int((1. - (len(body) / len(original_body))) * 100.) if original_body else 0
                 result['description'] = f'Found issues to remove in {result["cut_percent"]}% of this article. Read ' \
                                         f'the full bias report for more details.'
                 if phone_number:
@@ -234,8 +234,9 @@ class Agent(multiprocessing.Process):
             fcntl.flock(log_file, fcntl.LOCK_UN)
             logging.info(f'Loaded {num_loaded} processed jobs from disk')
 
-    def _update_job_status(self, job_id, url, status, result=None, error=None):
-        logging.info(f'Job {job_id} now {status}')
+    def _update_job_status(self, job_id, url, status, result=None, error=None, log_status=True):
+        if log_status:
+            logging.info(f'Job {job_id} now {status}')
         status_msg = {'status': status, 'url': url}
         if result:
             status_msg['result'] = result

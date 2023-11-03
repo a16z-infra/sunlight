@@ -169,9 +169,10 @@ class FetchOpenGraphTags(tornado.web.RequestHandler):
 
 
 class SubmitUrlHandler(tornado.web.RequestHandler):
-    def initialize(self, in_queue, job_statuses):
+    def initialize(self, in_queue, job_statuses, job_ids_by_url):
         self.in_queue = in_queue
         self.job_statuses = job_statuses
+        self.job_ids_by_url = job_ids_by_url
 
     def post(self):
         logging.info(f'Received {self.request.body}')
@@ -183,10 +184,13 @@ class SubmitUrlHandler(tornado.web.RequestHandler):
             self.write({'error': 'INVALID_URL'})
         elif any(tld in url for tld in UNSUPPORTED_TLDS):
             self.write({'error': 'UNSUPPORTED_URL'})
+        elif url in self.job_ids_by_url:
+            self.write({'job_id': self.job_ids_by_url[url]})
         else:
             job_id = get_job_id()
             self.in_queue.put({'job_id': job_id, 'job_idx': self.job_statuses['JOB_IDX'], 'url': url, 'model': model})
             self.job_statuses[job_id] = {'status': 'Queued', 'job_idx': self.job_statuses['JOB_IDX'], 'url': url}
+            self.job_ids_by_url[url] = job_id
             self.job_statuses['JOB_IDX'] += 1
             self.write({'job_id': job_id})
 
@@ -286,6 +290,7 @@ if __name__ == '__main__':
 
         job_statuses = manager.dict()
         job_statuses['JOB_IDX'], job_statuses['LAST_JOB_IDX'] = 1, 0
+        job_ids_by_url = manager.dict()
 
         [Agent(in_queue, out_queue).start() for _ in range(NUM_AGENTS)]
 
@@ -296,7 +301,7 @@ if __name__ == '__main__':
 
         app = tornado.web.Application([
             (r'/fetch_open_graph_tags', FetchOpenGraphTags, {'cache': {}}),
-            (r'/submit_url', SubmitUrlHandler, {'in_queue': in_queue, 'job_statuses': job_statuses}),
+            (r'/submit_url', SubmitUrlHandler, {'in_queue': in_queue, 'job_statuses': job_statuses, 'job_ids_by_url': job_ids_by_url}),
             (r'/submit_sms', TelnyxSMSHandler, {'in_queue': in_queue, 'job_statuses': job_statuses}),
             (r'/fetch_job_status', FetchJobStatusHandler, {'out_queue': out_queue, 'job_statuses': job_statuses}),
             (r'/(.*)', StaticFileHandlerWithDefaultContentType, {'path': '/app/'}),

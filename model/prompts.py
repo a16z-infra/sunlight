@@ -1,7 +1,8 @@
-FACTUAL_CLAIMS = u'''Summarize the factual claims made in this article in a bullet-point list.
+FACTUAL_CLAIMS = u'''Summarize the factual claims made in this article in a bulleted list separated by \u2022 unless it is too short.
 Instructions:
 1. Order the facts by decreasing importance
 2. Use extremely concise, simple language
+3. If the article is very short or truncated, request that user elaborate or re-host.
 
 ### Headline:
 {headline}
@@ -10,9 +11,9 @@ Instructions:
 {body}:
 
 ### Factual Claims:
-\u2022 '''
+\u2022'''
 
-BIAS_REPORT = '''Critique the following possibly-biased article.
+BIAS_REPORT = '''Critique the following possibly-biased article unless it is too short.
 Instructions:
 1. Identify any bias -- especially political bias.
 2. If the article is fair, be fair in your critique. If it is biased, be harsh and critical about the issues.
@@ -20,6 +21,7 @@ Instructions:
 4. Call out any opinion, hyperbole, and speculation.
 5. Assess where this article lies on the political spectrum.
 6. Write the critique as 3-5 paragraphs separated by two (2) newline characters.
+7. If the article is very short or truncated, explain the problem in one paragraph and do not critique it.
 
 ### Headline:
 {headline}
