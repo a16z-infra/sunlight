@@ -1,0 +1,65 @@
+[DE-SPIN] PRIVACY POLICY
+
+Last Updated: [Insert Date]
+This Privacy Policy describes how [Company Name] (“we”, “us,” “our,” or the “Company”) collects, uses and discloses information about individuals who use our website ([  ]) and any related services, tools and features (collectively, the “Services”). For the purposes of this Privacy Policy, “you” and “your” means you as the user of the Services, whether you are a customer, website visitor or another individual whose information we have collected pursuant to this Privacy Policy. 
+
+Please read this Privacy Policy carefully.  By using, accessing, or downloading any of the Services, you agree to the collection, use, and disclosure of your information as described in this Privacy Policy.  If you do not agree to this Privacy Policy, please do not use, access or download any of the Services.
+1.	CHANGES TO THIS PRIVACY POLICY
+We may modify this Privacy Policy from time to time in which case we will update the “Last Updated” date at the top of this Privacy Policy. If we make material changes to the way in which we use information we collect, we will use reasonable efforts to notify you (such as by emailing you at the last email address you provided us, by posting notice of such changes on the Services, or by other means consistent with applicable law) and will take additional steps as required by applicable law.  If you do not agree to any updates to this Privacy Policy, please do not access or continue to use the Services.
+2.	HOW WE COLLECT AND USE YOUR INFORMATION
+When you access or use the Services, we collect certain categories of information about you from a variety of sources. 
+
+Information We Collect Directly from You
+
+Some features of the Services may require you to directly provide us with certain information about yourself. You may elect not to provide this information, but doing so may prevent you from using or accessing these features. Information that you directly submit through our Services may include:
+
+•	Any articles or links to articles that you input into the Services. We use this information to provide you with the Services. 
+•	[Any information you choose to include in communications with us, for example, when sending a message through the Services.]
+Information We Collect Automatically
+
+We also automatically collect certain information about your interaction with the Services (“Usage Data”). To do this, we may use cookies, web beacons/clear gifs and other geolocation tracking technologies (“Tracking Technologies”). Usage Data includes:
+
+•	The following device information: IP address[, unique device identifier, device type and operating system.] 
+•	[The following browser information: browser type.]
+•	[The following location information: [approximate/precise] geolocation.] 
+•	[The following information regarding your interaction with the Services: log data, date and time stamps, clickstream data and ad impressions.] 
+We use Usage Data to prevent fraud [and] better understand user interaction with the Services [please insert any additional uses for above list of data points – e.g., tailor features and content to you, market to you, provide you with offers or promotions and run analytics]. For more information on how we use Tracking Technologies and your choices, see the section below, Cookies and Other Tracking Technologies.
+
+[Information We Obtain from Third Parties 
+
+Finally, we may obtain information about you from third parties, such as information we collect by going directly to third parties. This includes information we may collect from certain third-party social media platforms (i.e., Twitter). We use this information to better understand what is being said about the Services on these social media platforms.  
+
+Any information we obtain from third parties will be treated in accordance with this Privacy Policy. We are not responsible or liable for the accuracy of the information provided to us by third parties and are not responsible for any third party’s policies or practices. For more information, see the section below, Third Party Websites and Links.]
+
+In addition to the foregoing, we may use any of the above information to provide the Services, comply with any applicable legal obligations, to enforce any applicable terms of service, and to protect or defend the Services, our rights, and the rights of our users or others.
+3.	COOKIES AND OTHER TRACKING TECHNOLOGIES
+Most browsers accept cookies automatically, but you may be able to control the way in which your devices permit the use of Tracking Technologies. If you so choose, you may block or delete our cookies from your browser; however, blocking or deleting cookies may cause some of the Services, including certain features and general functionality, to work incorrectly. If you have questions regarding the specific information about you that we process or retain, as well as your choices regarding our collection and use practices, please contact us using the information listed below.
+
+[To opt out of tracking by Google Analytics, click here.]
+ 
+Your browser settings may allow you to transmit a “do not track” signal, “opt-out preference” signal, or other mechanism for exercising your choice regarding the collection of your information when you visit various websites.  Like many websites, our website is not designed to respond to such signals, and we do not use or disclose your information in any way that would legally require us to recognize opt-out preference signals. To learn more about “do not track” signals, you can visit http://www.allaboutdnt.com/.
+4.	HOW WE DISCLOSE YOUR INFORMATION
+In certain circumstances, we may disclose your information to third parties for legitimate purposes subject to this Privacy Policy. Such circumstances may include: 
+
+•	With vendors or other service providers (e.g., cloud storage providers)
+•	[With our affiliates or otherwise within our corporate group]
+•	In connection with or anticipation of an asset sale, merger, bankruptcy, or other business transaction
+•	To comply with applicable law or any obligations thereunder, including cooperation with law enforcement, judicial orders, and regulatory inquiries
+•	To enforce any applicable terms of service and ensure the safety and security of the Company and/or its users
+•	With professional advisors, such as auditors, law firms, or accounting firms
+5.	USER GENERATED CONTENT
+Certain of the Services may permit you to submit certain content or other materials (“User-Generated Content” or “UGC”). We or others may store, display, reproduce, publish, or otherwise use UGC, and may or may not attribute it to you. Others may also have access to UGC and may have the ability to share it with third parties. If you choose to submit UGC to any public area of the Services, your UGC will be considered “public” and will be accessible by anyone, including the Company.
+Please note that we do not control who will have access to the information that you choose to make available to others, and cannot ensure that parties who have access to such information will respect your privacy or keep it secure.  We are not responsible for the privacy or security of any information that you make publicly available on the features permitting creation of UGC or what others do with information you share with them on such platforms.  We are not responsible for the accuracy, use or misuse of any UGC that you disclose or receive from third parties through the forums or email lists.
+6.	[THIRD PARTY WEBSITES AND LINKS
+We may provide links to websites or other online platforms operated by third parties. If you follow links to sites not affiliated or controlled by us, you should review their privacy and security policies and other terms and conditions. We do not guarantee and are not responsible for the privacy or security of these sites, including the accuracy, completeness, or reliability of information found on these sites. Information you provide on public or semi-public venues, including information you share on third-party social networking platforms (such as Facebook or Twitter) may also be viewable by other users of the Services and/or users of those third-party platforms without limitation as to its use by us or by a third party. Our inclusion of such links does not, by itself, imply any endorsement of the content on such platforms or of their owners or operators, except as disclosed on the Services.]
+7.	CHILDREN’S PRIVACY
+We do not seek or knowingly collect any personal information about children under 13 years of age. If we become aware that we have unknowingly collected information about a child under 13 years of age, we will make commercially reasonable efforts to delete such information. If you are the parent or guardian of a child under 13 years of age who has provided us with their personal information, you may contact us using the below information to request that it be deleted.
+8.	SECURITY AND RETENTION OF YOUR INFORMATION
+Please be aware that, despite our reasonable efforts to protect your information, no security measures are perfect or impenetrable, and we cannot guarantee “perfect security.” Any information you send to us electronically, while using the Services or otherwise interacting with us, may not be secure while in transit. We recommend that you do not use unsecure channels to communicate sensitive or confidential information to us. 
+9.	HOW TO CONTACT US
+Should you have any questions about our privacy practices or this Privacy Policy, please email us at [EMAIL].
+
+
+
+
+
