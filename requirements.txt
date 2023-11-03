@@ -1,7 +1,7 @@
-langchain
-lxml
-openai
-six
-telnyx
-tiktoken
-tornado>=6.1.0
+langchain==0.0.327
+lxml==4.9.3
+openai==0.28.1
+six==1.16.0
+telnyx==2.0.0
+tiktoken==0.5.1
+tornado==6.3.3
