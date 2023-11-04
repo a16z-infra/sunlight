@@ -2,10 +2,16 @@
 
 ## Introduction
 
-Welcome to **Sunlight**, an open-source tool designed to illuminate your writing with the power of Large Language Models (LLMs). Sunlight analyzes and critiques writing for biases, providing suggestions for clarity and objectivity. Whether you're composing an article, drafting a report, or crafting a narrative, look to Sunlight for a second opinion to ensure fairness and a balanced perspective.
+**Sunlight** is an open-source tool for analyzing written content on the internet using Large Language Models (LLMs).
 
-## [Live Demo](https://sunlight.a16z.ai)
+The first release of Sunlight is designed to analyze writing for biases. Whether you're writing a news article, drafting a report, or crafting a narrative, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. Specifically, if you input a URL, it will generate:
+- A list of factual claims in the linked content
+- A critique of the bias, if any, in the content
+- An example of a shorter, unbiased version of the content
 
+### ☀️  [Live demo here!](https://sunlight.a16z.ai) ☀️
+
+This currently uses GPT-4, so it is far from perfect. We've noticed especially that the app sometimes amplifies weak bias. The prompts are all included in this repo and explained below. Please improve them and submit a PR! We also hope users will fork this repo to build other types of writing analysis apps.
 
 ## Local Installation
 
