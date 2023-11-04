@@ -4,7 +4,9 @@
 
 **Sunlight** is an open-source tool for analyzing written content on the internet using large language models (LLMs).
 
-The first release of Sunlight is designed to analyze writing for bias. Whether you're writing a news article, drafting a report, or crafting a narrative, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. You can also use it to analyze writing that's already been published. Specifically, if you input a public URL, it will generate:
+The first release of Sunlight is designed to analyze writing for bias. Whether you're writing a news article, drafting a report, or crafting a narrative, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. You can also use it to analyze writing that's already been published.
+
+Specifically, if you input a public URL, it will generate:
 - A list of factual claims in the linked content
 - A critique of the bias, if any, in the content
 - An example of a shorter, unbiased version of the content
