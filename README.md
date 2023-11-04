@@ -13,7 +13,7 @@ Specifically, if you input a public URL, it will generate:
 
 ### ☀️  [Live demo here!](https://sunlight.a16z.ai) ☀️
 
-This currently uses GPT-4, so it makes a lot of mistakes. We've noticed especially that the app sometimes amplifies weak bias or gets confused if the linked content is too short. The prompts are all included in this repo and explained below. Please improve them and submit a PR! We also hope users will fork this repo to build other types of writing analysis apps.
+This currently uses GPT-4, so it makes a lot of mistakes. We've noticed especially that the model sometimes amplifies weak bias or gets confused if the linked content is too short. The prompts are all included in this repo and explained below, so please improve them and submit a PR! We also hope users will fork this repo to build other types of writing analysis apps.
 
 ## Local Installation
 
