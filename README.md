@@ -4,16 +4,22 @@
 
 **Sunlight** is an open-source tool for analyzing written content on the internet using large language models (LLMs).
 
-The first release of Sunlight is designed to analyze writing for bias. When you're writing a blog post, article, report, etc, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. You can also use it to analyze writing that's already been published.
+The first release of Sunlight is designed to analyze writing for bias. When you're writing a blog post, article, report, etc, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. (It just has to be hosted somewhere on the internet.)
 
-Specifically, if you input a public URL, it will generate:
+### ☀️ [Live demo here!](https://sunlight.a16z.ai) ☀️
+
+If you input a public URL, Sunlight will generate:
 - A list of factual claims in the linked content
 - A critique of the bias, if any, in the content
 - An example of a shorter, unbiased version of the content
 
-### ☀️  [Live demo here!](https://sunlight.a16z.ai) ☀️
+## How to Contribute
 
-This currently uses GPT-4, so it makes a lot of mistakes. We've noticed especially that the model sometimes amplifies weak bias or gets confused if the linked content is too short. The prompts are all included in this repo and explained below, so please improve them and submit a PR! We also hope users will fork this repo to build other types of writing analysis apps.
+This currently uses GPT-4, so it makes a lot of mistakes. The prompts are all included in this repo, and we'd love help from the community improving them. Ways you can contribute include:
+- Improve the prompts and submit a PR!
+- Log examples of bad analysis as [Issues](https://github.com/a16z-infra/sunlight/issues), including the original link and explanation of what Sunlight got wrong
+- Add new functionality (e.g. a text box to analyze draft content)
+- Fork this repo to build other types of writing analysis apps
 
 ## Local Installation
 
