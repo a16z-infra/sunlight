@@ -154,20 +154,11 @@
       <h2>Bias Report</h2>
       <div id="bias-report-content" style="white-space: pre-wrap;"></div>
     </div>
-    <div style="display: flex; flex-direction: row">
-      <div style="flex: 1; padding-right: 20px">
-        <h2>Processed Article</h2>
-        <div id="processed-headline" class="headline"></div>
-        <div id="processed-body"></div>
-      </div>
-    </div>
   </div>
   <script>
     const form = document.getElementById('form');
     const statusEl = document.getElementById('status');
     const resultEl = document.getElementById('result');
-    const processedHeadlineEl = document.getElementById('processed-headline');
-    const processedBodyEl = document.getElementById('processed-body');
     const biasReportEl = document.getElementById('bias-report-content');
     const factualClaimsEl = document.getElementById('factual-claims-content');
 
@@ -204,9 +195,7 @@
         const { status, result, error } = await response.json();
         statusEl.innerHTML = status + '...';
         if (status === 'Complete') {
-          statusEl.innerHTML = `Completed - cut ${result.cut_percent}% out`;
-          processedHeadlineEl.innerText = result.headline;
-          processedBodyEl.innerText = result.body;
+          statusEl.innerHTML = 'Completed';
           biasReportEl.innerHTML = result.bias_report;
           factualClaimsEl.innerHTML = result.factual_claims;
           resultEl.style.display = 'block';

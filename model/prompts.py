@@ -11,7 +11,7 @@ Instructions:
 {body}:
 
 ### Factual Claims:
-\u2022'''
+'''
 
 BIAS_REPORT = '''Critique the following possibly-biased article unless it is too short.
 Instructions:
@@ -39,27 +39,4 @@ Example slants: Fair, Left-leaning, Extreme Right, Environmentalist, Bitcoin Max
 {bias_report}
 
 ### Slant:
-'''
-
-BASIC_SUMMARIZE = '''Rewrite the following article according to the instructions.
-Instructions:
-1. Remove all bias, opinion, hyperbole, speculation, and forward-looking statements -- especially any described in the Bias Report.
-2. Rewrite into an objective, professional tone using entirely new language; eliminate flourishes and creative style.
-3. Use erudite, pithy language in novel expressions.
-4. Reorder information in the inverted pyramid style: most important to least.
-5. Do not misreport facts from the original article; include important factual details.
-6. Attribute all direct quotes using quotation marks.
-7. Split into multiple paragraphs separated by two (2) newline characters.
-8. Use markdown h3 elements ### to distinguish the Edited Headline and Edited Body.
-
-### Headline:
-{headline}
-
-### Body:
-{body}
-
-### Bias Report:
-{bias_report}
-
-### Edited Headline:
 '''

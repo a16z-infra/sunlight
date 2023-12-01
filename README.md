@@ -11,7 +11,7 @@ The first release of Sunlight is designed to analyze writing for bias. When you'
 If you input a public URL, Sunlight will generate:
 - A list of factual claims in the linked content
 - A critique of the bias, if any, in the content
-- An example of a shorter, unbiased version of the content
+- A pithy label for the perspective shown
 
 ## How to Contribute
 
@@ -69,7 +69,6 @@ Sunlight uses a series of carefully crafted prompts to guide the LLMs in assessi
 1. **Fact extraction**: identify, condense, and reorder claims made in your writing
 2. **Bias analysis**: assess your piece's underlying perspective in a brief report
 3. **Slant tagging**: using the bias report, assign a short label for categorization
-4. **Copy editing**: combining the above elements, rework the piece for objectivity while retaining the same factual skeleton
 
 ## Disclaimer
 
