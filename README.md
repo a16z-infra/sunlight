@@ -80,5 +80,5 @@ It is incapable of providing investment advice, legal advice or marketing financ
 
 ---
 
-Thanks for checking out our tool and reading this far. We hope Sunlight is useful to you  Community contributions, feedback, and insights are what make open-source projects successful; please reach out with any comments or suggestions.
+Thanks for checking out our tool and reading this far. We hope Sunlight is useful to you. Community contributions, feedback, and insights are what make open-source projects successful; please reach out with any comments or suggestions.
 
