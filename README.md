@@ -72,7 +72,7 @@ Sunlight uses a series of carefully crafted prompts to guide the LLMs in assessi
 
 ## Disclaimer
 
-Please read our [Terms of Service](https://sunlight.a16z.ai/static/terms_of_service.txt) and [Privacy Policy](https://sunlight.a16z.ai/static/privacy_policy.txt) before using Sunlight.
+Please read our [Terms of Service](https://trysunlight.ai/static/terms_of_service.txt) and [Privacy Policy](https://trysunlight.ai/static/privacy_policy.txt) before using Sunlight.
 
 Sunlight may produce inaccurate information. This demo utilizes experimental large language model technology to generate its outputs, and we make no guarantees or promises regarding the accuracy or suitability of its analysis. This demo makes no claim to correct factual errors in the underlying source content.
 
