@@ -6,7 +6,7 @@
 
 The first release of Sunlight is designed to analyze writing for bias. When you're writing a blog post, article, report, etc, you can use Sunlight for a second opinion to ensure fairness and a balanced perspective. (It just has to be hosted somewhere on the internet.)
 
-### ☀️ [Live demo here!](https://sunlight.a16z.ai) ☀️
+### ☀️ [Live demo here!](https://trysunlight.ai) ☀️
 
 If you input a public URL, Sunlight will generate:
 - A list of factual claims in the linked content
